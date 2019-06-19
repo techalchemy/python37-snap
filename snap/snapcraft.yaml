@@ -1,0 +1,189 @@
+name: python37
+version: 3.7.3
+base: core18
+summary: Dynamic, interpreted, interactive, object oriented programming language
+description: |
+  Python is an interpreted, interactive, object-oriented programming
+  language used for web application development, data science, system
+  administration, and more. It is often compared to Tcl, Perl, Scheme
+  or Java.
+
+  Python combines remarkable power with very clear syntax. It has
+  modules, classes, exceptions, very high level dynamic data types, and
+  dynamic typing. There are interfaces to many system calls and
+  libraries, as well as to various windowing systems (X11, Motif, Tk,
+  Mac, MFC). New built-in modules are easily written in C or C++. Python
+  is also usable as an extension language for applications that need a
+  programmable interface.
+
+grade: devel
+confinement: classic
+environment:
+  LANG: C.UTF-8
+  LC_CTYPE: C.UTF-8
+
+layout:
+  /bin/pip:
+    symlink: $SNAP/bin/pip3.7
+  /bin/python:
+    symlink: $SNAP/bin/python3.7
+
+apps:
+  python37:
+    command: bin/python3.7
+    environment:
+      PYTHONUSERBASE: $SNAP_USER_DATA
+      PIP_USER: "1"
+
+  python:
+    command: bin/python3.7
+    environment:
+      PYTHONUSERBASE: $SNAP_USER_DATA
+      PIP_USER: "1"
+
+  python3:
+    command: bin/python3
+    environment:
+      PYTHONUSERBASE: $SNAP_USER_DATA
+      PIP_USER: "1"
+
+  pip:
+    command: bin/pip3.7
+    environment:
+      PYTHONUSERBASE: $SNAP_USER_DATA
+      PIP_USER: "1"
+
+  pip3:
+    command: bin/pip3
+    environment:
+      PYTHONUSERBASE: $SNAP_USER_DATA
+      PIP_USER: "1"
+  
+  pip36:
+    command: bin/pip3.7
+    environment:
+      PYTHONUSERBASE: $SNAP_USER_DATA
+      PIP_USER: "1"
+
+parts:
+  python:
+    plugin: autotools
+    source: https://github.com/python/cpython.git
+    source-tag: v3.7.3
+    source-type: git
+    # configflags:
+    #   - --enable-shared
+    install-via: prefix
+    build-packages:
+      - autoconf
+      - blt-dev
+      - build-essential
+      - bzip2
+      - debhelper
+      - dpkg-dev
+      - expat
+      - g++-8
+      - libbluetooth-dev
+      - libbz2-dev
+      - libdb-dev
+      - libexpat1
+      - libexpat1-dev
+      - libffi-dev
+      - libfontconfig1-dev
+      - libgdbm-dev
+      - libgpm2
+      - liblzma-dev
+      - liblzma5
+      - libmpdec-dev
+      - libncurses5-dev
+      - libncursesw5-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - libtk8.6
+      - libxft-dev
+      - libxml2
+      - libxml2-dev
+      - libxrender-dev
+      - libxrender1
+      - libxslt1-dev
+      - libxslt1.1
+      - locales
+      - lsb-release
+      - lzma-dev
+      - mime-support
+      - net-tools
+      - netbase
+      - openssl
+      - quilt
+      - sharutils
+      - tcl-dev
+      - time
+      - tk-dev
+      - uuid-dev
+      - xauth
+      - xvfb
+      - xzip
+      - zlib1g-dev
+    stage-packages:
+      - autoconf
+      - blt-dev
+      - build-essential
+      - bzip2
+      - debhelper
+      - dpkg-dev
+      - expat
+      - g++-8
+      - libbluetooth-dev
+      - libbz2-dev
+      - libdb-dev
+      - libexpat1
+      - libexpat1-dev
+      - libffi-dev
+      - libffi6
+      - libfontconfig1-dev
+      - libgdbm-dev
+      - libgdbm5
+      - libgpm2
+      - liblzma-dev
+      - liblzma5
+      - libmpdec-dev
+      - libncurses5
+      - libncurses5-dev
+      - libncursesw5
+      - libncursesw5-dev
+      - libreadline-dev
+      - libreadline5
+      - libsqlite3-dev
+      - libssl-dev
+      - libssl1.1
+      - libtk8.6
+      - libxft-dev
+      - libxml2
+      - libxml2-dev
+      - libxrender-dev
+      - libxrender1
+      - libxslt1-dev
+      - libxslt1.1
+      - libzip4
+      - locales
+      - lsb-release
+      - lzma
+      - lzma-dev
+      - mime-support
+      - net-tools
+      - netbase
+      - openssl
+      - quilt
+      - sharutils
+      - sqlite3
+      - tcl
+      - tcl-dev
+      - time
+      - tk-dev
+      - uuid-dev
+      - xauth
+      - xvfb
+      - xzip
+      - zlib1g
+      - zlib1g-dev
