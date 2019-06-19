@@ -94,6 +94,7 @@ parts:
       - libgpm2
       - liblzma-dev
       - liblzma5
+      - libsqlite3-0
       - libmpdec-dev
       - libncurses5-dev
       - libncursesw5-dev
@@ -155,6 +156,7 @@ parts:
       - libreadline-dev
       - libreadline5
       - libsqlite3-dev
+      - libsqlite3-0
       - libssl-dev
       - libssl1.1
       - libtk8.6
